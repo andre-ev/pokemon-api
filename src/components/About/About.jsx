@@ -1,0 +1,20 @@
+const About = () => {
+  return(
+    <div>
+      <h1>Single Page Application</h1>
+      <br />
+      <h2>About</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc odio nibh, cursus sed pulvinar a, scelerisque eu lorem. Morbi finibus neque justo, nec auctor enim fringilla at. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean sollicitudin augue id ex maximus, id volutpat metus condimentum. Phasellus imperdiet nunc eu tortor placerat, a elementum libero vulputate. Donec iaculis elementum turpis in vestibulum. Nulla venenatis magna et ex egestas fermentum. Aliquam nec justo vel leo accumsan mollis. Nunc id urna ac odio egestas pellentesque. Maecenas lacinia nibh dolor, ac elementum arcu molestie ut. Curabitur pulvinar dapibus velit mollis aliquet. Nulla quam nibh, bibendum vitae lectus et, mattis euismod nisl. Mauris a gravida odio, ut posuere mi. Donec in sem sit amet mi placerat interdum eu varius purus. Aliquam vulputate imperdiet ex, nec sodales tortor fermentum quis.</p>
+
+      <p>Aliquam commodo feugiat nibh, tincidunt iaculis lectus tristique aliquet. Aliquam sed diam a turpis auctor pellentesque a et dui. Nullam enim mauris, malesuada et eros a, malesuada dictum dolor. Curabitur eget libero eros. Donec posuere justo imperdiet, sollicitudin urna in, maximus mi. Suspendisse sit amet orci tincidunt, varius mauris a, luctus turpis. Donec porta, mi in pellentesque gravida, ante eros mattis ex, ut finibus ante quam nec erat. Quisque at nibh ornare neque tempus consectetur quis sed ipsum. Duis id augue odio. Etiam efficitur pellentesque ornare. Ut consectetur maximus mi fringilla varius. Phasellus ullamcorper malesuada tellus in sollicitudin. Nulla euismod nunc purus, a molestie nunc bibendum at. Praesent aliquam eros lacus, et eleifend lectus iaculis eget. Mauris dui ipsum, dictum quis placerat aliquet, convallis sit amet ante.</p>
+
+      <p>Nulla maximus volutpat faucibus. Etiam imperdiet tristique purus, at congue diam laoreet vitae. Suspendisse potenti. Curabitur ut elementum sem. Fusce a enim venenatis, luctus ex eget, rutrum massa. Donec consequat viverra metus, non dictum ligula. Nam viverra sem id nibh pellentesque venenatis. Pellentesque blandit cursus magna et efficitur. Nunc lorem neque, ornare ut erat quis, vulputate dignissim massa. Donec tincidunt scelerisque tempor. Fusce eget eros eros.</p>
+
+      <p>In quis blandit quam, eu efficitur odio. Integer ante nibh, maximus vitae massa at, venenatis malesuada ante. Curabitur est erat, facilisis porta varius vel, mollis a leo. Sed risus augue, volutpat in eleifend nec, vehicula faucibus turpis. Sed pretium mauris sed arcu suscipit accumsan. Nullam condimentum congue viverra. Nulla lacinia, nulla sit amet pharetra sollicitudin, erat leo bibendum magna, sed molestie felis elit ac neque. In a sagittis lorem. Sed eleifend tempor eros eu posuere. Duis ut enim vel odio tempor congue. Mauris aliquet sed magna non dignissim. Donec sapien magna, malesuada nec sem at, tristique imperdiet tellus. Suspendisse potenti. Sed non bibendum turpis. Cras eu velit vel urna imperdiet dapibus vel sed ante. Suspendisse vitae luctus ante.</p>
+
+      <p>Morbi volutpat volutpat dictum. Proin non eros mauris. Aliquam non fermentum ex. Phasellus ligula eros, dictum sit amet orci efficitur, consequat pretium dolor. Nunc egestas eros eu risus congue lacinia vitae sed tortor. Maecenas sit amet faucibus elit, quis tempus turpis. Cras interdum elementum orci ut luctus. Pellentesque odio eros, volutpat ac leo a, porta euismod neque. Nam sodales pretium enim, eget aliquet massa consectetur a. Quisque euismod tristique justo ut eleifend. Integer nec elit orci. Curabitur consequat, nisi et viverra bibendum, leo turpis feugiat metus, vitae semper augue nisl eget lorem. Vestibulum congue lectus et libero condimentum, quis convallis dolor sodales. Proin ut risus dolor. Etiam id magna quis nisi mattis vestibulum.</p>
+    </div>
+  )
+}
+
+export default About;
