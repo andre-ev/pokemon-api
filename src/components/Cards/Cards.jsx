@@ -2,7 +2,6 @@ import Card from './Card';
 import style from './Cards.module.css'
 
 export default function Cards({pokemons, onClose}) {
-
    return(
     <div className={style.contenedor}>
       {

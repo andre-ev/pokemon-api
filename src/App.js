@@ -2,6 +2,7 @@ import "./App.css";
 import Navs from "./components/Navbar/Nav";
 import Cards from "./components/Cards/Cards";
 import About from "./components/About/About";
+import Detail from "./components/Detail/Detail";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
@@ -17,7 +18,7 @@ function App () {
             id: data.id,
             name: data.name,
             types: data.types,
-            image: data.sprites.other.dream_world.front_default
+            image:data.sprites.other['official-artwork'].front_default 
           };
           setPokemons((oldPokemons) => [
             ...oldPokemons,
@@ -27,7 +28,9 @@ function App () {
           window.alert("No hay personajes con ese ID");
         }
     })
-    .catch(error => console.error(error));
+    .catch((error) => {
+      window.alert("No hay personajes con ese ID")
+    });
   };
 
   const onClose = (id) => {
@@ -46,6 +49,7 @@ function App () {
             element={<Cards pokemons={pokemons} onClose={onClose} />}
           />
           <Route path="about" element={<About />} />
+          <Route path="detail/:detailId" element={<Detail />} />
         </Routes>
       </div>
       <br />

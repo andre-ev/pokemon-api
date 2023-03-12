@@ -12,27 +12,6 @@
   justify-items: center;
 }
 
-.headType {
-  text-align: left;
-  color: #003A70;
-  width: auto;
-  height: auto;
-  padding: 1rem;
-  margin: 0.5rem;
-}
-
-.headType h4 {
-  line-height: 0.2rem;
-}
-
-.headType li {
-  line-height: 1.8rem;
-}
-
-.headType li:first-letter {
-  text-transform: uppercase;
-}
-
 .contenedor button {
   display: inline-flex; 
   border: 1px solid lightcoral;
@@ -50,18 +29,13 @@
   border: 1px solid #00cba9;
   color: black;
   border-radius: 2rem;
-  font-family: Lato, sans-serif;
 }
 
-.card h2:first-letter {
-  text-transform: uppercase;
-}
 
 .imgNormalizada {
   display: block;
   margin-top: auto;
-  width: 270px;
-  height: 270px;
+  width: 250px;
+  height: 250px;
   border-radius: 20px;
 }
-
