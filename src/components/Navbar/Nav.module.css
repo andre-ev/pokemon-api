@@ -1,0 +1,77 @@
+* {box-sizing: border-box;}
+
+.navMenu {
+  overflow: hidden;
+  background-color: #FFCB05;
+  border-radius: 1rem;
+  border: 1px solid yellow;
+}
+
+.navMenu a {
+  float: left;
+  display: block;
+  color: #003A70;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navMenu a:hover {
+  background-color: #003A70;
+  color: white;
+}
+
+.navMenu a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.navMenu .search-container {
+  float: right;
+}
+
+.navMenu input {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  border-radius: 0.8rem 0rem 0rem 0.8rem;
+  border: 1px solid yellow;
+}
+
+.navMenu .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #FFCB05;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  color: #003A70;
+  border-radius: 0rem 0.8rem 0.8rem 0rem;
+  border: 1px solid yellow;
+}
+
+.navMenu .search-container button:hover {
+  background-color: #003A70;
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .navMenu .search-container {
+    float: none;
+  }
+  .navMenu a, .navMenu input[type=text], .navMenu .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .navMenu input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}

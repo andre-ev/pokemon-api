@@ -53,6 +53,10 @@
   font-family: Lato, sans-serif;
 }
 
+.card a {
+  text-decoration: none;
+}
+
 .card h2:first-letter {
   text-transform: uppercase;
 }

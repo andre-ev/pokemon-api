@@ -3,6 +3,7 @@ import Navs from "./components/Navbar/Nav";
 import Cards from "./components/Cards/Cards";
 import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
+import Form from "./components/Form/Form";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
@@ -50,6 +51,7 @@ function App () {
           />
           <Route path="about" element={<About />} />
           <Route path="detail/:detailId" element={<Detail />} />
+          <Route path="form" element={<Form />} />
         </Routes>
       </div>
       <br />
