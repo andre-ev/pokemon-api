@@ -50,19 +50,36 @@ export default function Form() {
   }
 
   const handleSubmit = (event) => {
+    // Para evitar recargar la pagina, agregar el preventDefault
+    // esto únicamente debe ser asignado en el handleSubmit
     event.preventDefault();
-    alert("Info enviada correctamente");
-    setForm({
-      name: "",
-      email: "",
-      password: ""
-    })
+    
+    // Convierte el objeto errors en un array para medir su longitud
+    if(!Object.values(errors).length) {
+      alert("Datos completos");
+
+      setForm({
+        name: "",
+        email: "",
+        password: ""
+      })
+
+      setErrors({
+        name: "",
+        email: "",
+        password: ""
+      })
+    } else {
+      alert("Debe llenar todos los campos");
+    }
+
   }
 
   return(
     <div>
       <form onSubmit={handleSubmit}>
         <h1>Formulario</h1>
+        
         <label htmlFor="name">Name: </label>
         <input type="text" name="name" value={form.name} 
           onChange={handleFormChange}

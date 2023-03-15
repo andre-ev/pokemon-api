@@ -4,11 +4,31 @@ import Cards from "./components/Cards/Cards";
 import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
 import Form from "./components/Form/Form";
-import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import Login from "./components/Login/Login";
+import { useState, useEffect } from "react";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
 function App () {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [pokemons, setPokemons] = useState([]);
+  const [access, setAccess] = useState(false);
+
+  const username = "andre.ev@outlook.com"
+  const password = "123456"
+
+  const login = (userData) => {
+    if(
+      userData.username === username && userData.password === password
+    ) {
+      setAccess(true);
+      navigate("/home");
+    }
+  }
+
+  useEffect(() => {
+    !access && navigate("/")
+  }, [access])
 
   const onSearch = (pokemons) => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemons}`)
@@ -43,7 +63,7 @@ function App () {
   return (
     <div className="App" >
       <div style={{ padding: "25px" }}>
-        <Navs onSearch={onSearch}/>
+        {location.pathname === "/" ? <Login login={login} /> : <Navs onSearch={onSearch}/>}
         <Routes>
           <Route 
             path="home" 
