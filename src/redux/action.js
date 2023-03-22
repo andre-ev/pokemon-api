@@ -1,11 +1,9 @@
-import { AUMENTAR_CONTADOR, GET_USERS } from "./action-type";
+import { ADD_FAVORITE, DELETE_FAVORITE } from "./action-types";
 
-export const aumentarContador = () => {
-  return { type: AUMENTAR_CONTADOR }
+export const addFavorite = (pokemon) => {
+  return { type: ADD_FAVORITE, payload: pokemon }
 }
 
-export const getUsers = () => {
-  return function() {
-
-  }
+export const deleteFavorite = (id) => {
+  return { type: DELETE_FAVORITE, payload: id }
 }

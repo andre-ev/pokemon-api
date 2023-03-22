@@ -1,17 +1,23 @@
-import { AUMENTAR_CONTADOR } from "./action-type";
+import { ADD_FAVORITE, DELETE_FAVORITE } from "./action-types";
 
 const initialState = {
-  count: 0,
-  users: [],
-  user: {}
+  myFavorites: []
 };
 
-const reducer = (state = initialState, action) => {
-  switch(action.type) {
-    case AUMENTAR_CONTADOR:
+const reducer = (state = initialState, {type, payload}) => {
+  switch(type) {
+    case ADD_FAVORITE:
       return {
         ...state,
-        count: state.count + 1
+        myFavorites: [...state.myFavorites, payload] 
+      }
+
+    case DELETE_FAVORITE:
+      return {
+        ...state,
+        myFavorites: state.myFavorites.filter(
+          ((char) => char.id !== payload)
+        )
       }
 
     default:
@@ -19,4 +25,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer
+export default reducer;

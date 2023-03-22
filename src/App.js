@@ -5,7 +5,7 @@ import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
 import Form from "./components/Form/Form";
 import Login from "./components/Login/Login";
-import Contador from "./components/Contador/Contador";
+import Favorites from "./components/Favorites/Favorites";
 import { useState, useEffect } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
@@ -72,8 +72,8 @@ function App () {
           />
           <Route path="about" element={<About />} />
           <Route path="detail/:detailId" element={<Detail />} />
-          <Route path="contador" element={<Contador />} />
           <Route path="form" element={<Form />} />
+          <Route path="favorites" element={<Favorites />} />
         </Routes>
       </div>
       <br />

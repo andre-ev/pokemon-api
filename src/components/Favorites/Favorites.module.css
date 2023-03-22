@@ -1,0 +1,71 @@
+.contenedor {
+  width: auto;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1.5rem;
+  justify-content: space-around;
+  padding: 1rem;
+  border: 1px solid yellow;
+  border-radius: 1rem;
+  margin: 1rem;
+  justify-items: center;
+}
+
+.headType {
+  text-align: left;
+  color: #003A70;
+  width: auto;
+  height: auto;
+  padding: 1rem;
+  margin: 0.5rem;
+}
+
+.headType h4 {
+  line-height: 0.2rem;
+}
+
+.headType li {
+  line-height: 1.8rem;
+}
+
+.headType li:first-letter {
+  text-transform: uppercase;
+}
+
+.contenedor button {
+  display: inline-flex; 
+  border: 1px solid lightcoral;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 5px 10px;
+  color: lightcoral;
+}
+
+.card {
+  width: fit-content;
+  height: auto;
+  padding: 1.2rem;
+  background: rgba(0,203,169,0.1); 
+  border: 1px solid #00cba9;
+  color: black;
+  border-radius: 2rem;
+  font-family: Lato, sans-serif;
+}
+
+.card a {
+  text-decoration: none;
+}
+
+.card h2:first-letter {
+  text-transform: uppercase;
+}
+
+.imgNormalizada {
+  display: block;
+  margin-top: auto;
+  width: 270px;
+  height: 270px;
+  border-radius: 20px;
+}
+

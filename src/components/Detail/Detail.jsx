@@ -15,9 +15,7 @@ const Detail = () => {
           const character = {
             id: data.id,
             name: data.name,
-            image: data.sprites.other.dream_world.front_default ?
-              data.sprites.other.dream_world.front_default :
-              data.sprites.other['official-artwork'].front_default,
+            image: data.sprites.other['official-artwork'].front_default,
             hp: data.stats.find((stat) => stat.stat.name === 'hp')?.base_stat,
             speed: data.stats.find((stat) => stat.stat.name === 'speed')?.base_stat,
             height: data?.height,
