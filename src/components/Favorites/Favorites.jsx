@@ -1,12 +1,46 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { filterCards, orderCards, setPokemonTypes } from "../../redux/action";
 import style from "./Favorites.module.css"
 
 const Favorites = () => {
-  const { myFavorites } = useSelector(state => state);
+  const { myFavorites, pokemonTypes } = useSelector(state => state);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if(pokemonTypes.length === 0) {
+      dispatch(setPokemonTypes());
+    }
+  }, [dispatch, pokemonTypes])
+
+  const handlerOrder = (event) => {
+    dispatch(orderCards(event.target.value))
+  }
+
+  const handlerFilter = (event) => {
+    dispatch(filterCards(event.target.value))
+  }
 
   return(
     <div className={style.contenedor}>
+      <div>
+        <select onChange={handlerOrder}>
+          <option value="order" disabled="disabled">Order By</option>
+          <option value="Ascendente">Ascendente</option>
+          <option value="Descendente">Descendente</option>
+        </select>
+        <select onChange={handlerFilter}>
+          <option value="filter" disabled="disabled">Filter By</option>
+          {
+            pokemonTypes.map((type, index) => {
+              return(
+                <option key={index} value={type}>{type}</option>
+              );
+            })
+          }
+        </select>
+      </div>
       {
         myFavorites.map((pokemon) => {
           return(
