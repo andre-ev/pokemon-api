@@ -32,7 +32,7 @@ function App () {
   }, [access])
 
   const onSearch = (pokemons) => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemons}`)
+    fetch(`http://localhost:3001/api/pokemons/${pokemons}`)
     .then((response) => response.json())
     .then((data) => {
         if(data.name) {
@@ -40,7 +40,8 @@ function App () {
             id: data.id,
             name: data.name,
             types: data.types,
-            image:data.sprites.other['official-artwork'].front_default 
+            // image:data.sprites.other['official-artwork'].front_default 
+            image: data.image
           };
           setPokemons((oldPokemons) => [
             ...oldPokemons,

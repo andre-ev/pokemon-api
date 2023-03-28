@@ -47,9 +47,9 @@ export default function Card({
       <div className={style.headType}>
         <h4>Types</h4>
         {
-          types.map((type) => {
+          types.map((type, index) => {
             return(
-              <li key={type.slot}>{type.type.name}</li>
+              <li key={index}>{type}</li>
             );
           })
         }

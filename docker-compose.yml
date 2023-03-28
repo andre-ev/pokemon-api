@@ -1,11 +1,26 @@
 version: '3'
 
 services:
-  node:
-    build: .
+  client:
+    container_name: "Pokemon-Client"
+    build: ./client/
     volumes:
-      - .:/usr/src/app
+      - ./client:/usr/src/app
     ports:
       - "3000:3000"
     tty: true
-    container_name: "Pokemon-API"
+    networks:
+      - Pokemon-SPA
+  api:
+    container_name: "Pokemon-Api"
+    build: ./api/
+    volumes:
+      - ./api:/usr/src/app
+    ports:
+      - "3001:3001"
+    tty: true
+    networks:
+      - Pokemon-SPA
+
+networks:
+  Pokemon-SPA:
