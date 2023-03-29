@@ -36,7 +36,7 @@ function App () {
     const validation = pokemons.find(pokemon => pokemon.id === parseInt(id));
 
     if (!validation) {
-      fetch(`http://localhost:3001/api/onsearch/${id}`)
+      fetch(`http://localhost:3001/pokemon/onsearch/${id}`)
       .then((response) => response.json())
       .then((data) => {
           if(data.name) {

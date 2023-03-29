@@ -8,7 +8,7 @@ const Detail = () => {
   const [ characters, setCharacters ] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/detail/${detailId}`)
+    fetch(`http://localhost:3001/pokemon/detail/${detailId}`)
     .then((response) => response.json())
     .then((data) => {
         if(data.name) {

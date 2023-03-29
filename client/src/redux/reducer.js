@@ -1,9 +1,10 @@
-import { ADD_FAVORITE, DELETE_FAVORITE, FILTER, ORDER, SET_POKEMON_TYPES } from "./action-types";
+import { ADD_FAVORITE, DELETE_FAVORITE, FILTER, GET_FAVORITE, ORDER, SET_POKEMON_TYPES } from "./action-types";
 
 const initialState = {
   myFavorites: [],
   allCharacters: [],
-  pokemonTypes: []
+  pokemonTypes: [],
+  errors: {}
 };
 
 const reducer = (state = initialState, {type, payload}) => {
@@ -13,19 +14,15 @@ const reducer = (state = initialState, {type, payload}) => {
     case ADD_FAVORITE:
       return {
         ...state,
-        myFavorites: [...state.allCharacters, payload],
-        allCharacters: [...state.allCharacters, payload]
+        myFavorites: payload,
+        allCharacters: payload
       }
 
     case DELETE_FAVORITE:
       return {
         ...state,
-        allCharacters: state.allCharacters.filter(
-          ((char) => char.id !== payload)
-        ),
-        myFavorites: state.allCharacters.filter(
-          ((char) => char.id !== payload)
-        )
+        allCharacters: payload,
+        myFavorites: payload
       }
 
     case FILTER:
@@ -51,6 +48,19 @@ const reducer = (state = initialState, {type, payload}) => {
       return {
         ...state,
         pokemonTypes: payload
+      }
+  
+    case GET_FAVORITE:
+      return {
+        ...state,
+        myFavorites: payload,
+        errors: {},
+      }
+
+    case "ERROR":
+      return {
+        ...state,
+        errors: payload
       }
 
     default:
