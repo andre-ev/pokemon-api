@@ -8,7 +8,7 @@ export default function Card({
   id, name, types, image, onClose
 }) {
   const dispatch = useDispatch();
-  const myFavorites = useSelector(state => state.myFavorites);
+  const allCharacters = useSelector(state => state.allCharacters);
   const [isFav, setIsFav] = useState(false);
 
   const handleFavorite = () => {
@@ -22,12 +22,12 @@ export default function Card({
   }
 
   useEffect(() => {
-    myFavorites.forEach((fav) => {
+    allCharacters.forEach((fav) => {
       if(fav.id === id) {
         setIsFav(true);
       }
     })
-  }, [myFavorites]);
+  }, [allCharacters]);
 
   return (
     <div className={style.card}>
@@ -49,7 +49,7 @@ export default function Card({
         {
           types.map((type, index) => {
             return(
-              <li key={index}>{type}</li>
+              <li key={index}>{type.type.name}</li>
             );
           })
         }

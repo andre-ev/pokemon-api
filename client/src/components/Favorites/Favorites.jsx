@@ -42,7 +42,7 @@ const Favorites = () => {
         </select>
       </div>
       {
-        myFavorites.map((pokemon) => {
+      myFavorites.map((pokemon) => {
           return(
             <div className={style.card}>
               <img  src={pokemon.image} alt={pokemon.name} className={style.imgNormalizada} /> 
@@ -55,7 +55,7 @@ const Favorites = () => {
                 {
                   pokemon.types.map((type, index) => {
                     return(
-                      <li key={index}>{type}</li>
+                      <li key={index}>{type.type.name}</li>
                     );
                   })
                 }

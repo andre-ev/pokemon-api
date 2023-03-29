@@ -1,25 +1,19 @@
 const http = require("http");
-const characters = require("../utils/data");
+const getCharById = require("../controllers/getCharById");
+const getCharDetail = require("../controllers/getCharDetail");
 
 
 // Creando y levantando servidor data.js
 http.createServer((req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*")
+  let id = req.url.split("/").at(-1);
 
-  if(req.url.includes("api/pokemons")) {
-    let id = req.url.split("/").at(-1);
-    
-    // let characterFilter = characters.filter((char) => {
-    //   return char.id === Number(id);
-    // })
-
-    // Usando Find para filtrar el personaje 
-    let characterFilter = characters.find((char) => {
-      return char.id === Number(id);
-    })
-
-    res
-      .writeHead(200, {"Content-type": "application/json"})
-      .end(JSON.stringify(characterFilter))
+  if(req.url.includes("onsearch")) {
+    getCharById(res, id);
   }
+
+  if(req.url.includes("detail")) {
+    getCharDetail(res, id);
+  }
+
 }).listen(3001, "0.0.0.0")

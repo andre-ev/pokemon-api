@@ -8,16 +8,16 @@ const Detail = () => {
   const [ characters, setCharacters ] = useState({});
 
   useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${detailId}`)
+    fetch(`http://localhost:3001/api/detail/${detailId}`)
     .then((response) => response.json())
     .then((data) => {
         if(data.name) {
           const character = {
             id: data.id,
             name: data.name,
-            image: data.sprites.other['official-artwork'].front_default,
-            hp: data.stats.find((stat) => stat.stat.name === 'hp')?.base_stat,
-            speed: data.stats.find((stat) => stat.stat.name === 'speed')?.base_stat,
+            image: data.image,
+            hp: data.hp,
+            speed: data.speed,
             height: data?.height,
             weight: data?.weight,
             types: data.types,
